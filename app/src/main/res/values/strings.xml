@@ -9,4 +9,7 @@
     <string name="search_failed">Search failed</string>
     <string name="update_task">Update task</string>
     <string name="add_task">Add task</string>
+    <string name="hint_message">Message</string>
+    <string name="action_add">Add</string>
+    <string name="action_cancel">Cancel</string>
 </resources>
