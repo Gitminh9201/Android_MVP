@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MVP</string>
+    <string name="add">add</string>
+    <string name="finish">finish</string>
+    <string name="hint_title">Title</string>
+    <string name="add_failed">Add failed</string>
+    <string name="get_failed">failed to get task</string>
+    <string name="delete_failed">Delete_failed</string>
+    <string name="search_failed">Search failed</string>
+    <string name="update_task">Update task</string>
+    <string name="add_task">Add task</string>
 </resources>
