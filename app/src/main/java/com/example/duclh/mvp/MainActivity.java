@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.example.duclh.mvp.data.source.local.TaskLocalDataSource;
 import com.example.duclh.mvp.data.source.TaskRepository;
 import com.example.duclh.mvp.data.source.remote.TaskRemoteDataSource;
 import com.example.duclh.mvp.databinding.ActivityMainBinding;
+import com.example.duclh.mvp.databinding.ItemDialogBinding;
 
 
 import java.util.ArrayList;
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setMain(this);
         mPresenter = new MainPresenter(new TaskRepository(new TaskLocalDataSource(this),
@@ -106,42 +107,19 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void onGetFail() {
     }
 
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.add_button:
-//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//                View dialogView = getLayoutInflater().inflate(R.layout.item_dialog, null);
-//                final EditText editTitle = (EditText) dialogView.findViewById(R.id.edit_title);
-//                final EditText editMessage = (EditText) dialogView.findViewById(R.id.edit_message);
-//                builder.setView(dialogView)
-//                        .setTitle("Add Task")
-//                        .setPositiveButton(R.string.action_add, new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//                                mPresenter.addTask(mTaskList, editTitle.getText().toString(),
-//                                        editMessage.getText().toString());
-//                            }
-//                        }).setNegativeButton(R.string.action_cancel, null);
-//                builder.create().show();
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-
     public void onClick(){
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = getLayoutInflater().inflate(R.layout.item_dialog, null);
-        final EditText editTitle = (EditText) dialogView.findViewById(R.id.edit_title);
-        final EditText editMessage = (EditText) dialogView.findViewById(R.id.edit_message);
-        builder.setView(dialogView)
+        LayoutInflater inflater = LayoutInflater.from(this);
+        final ItemDialogBinding dialogBinding = DataBindingUtil.inflate(inflater, R.layout.item_dialog, null, false);
+        dialogBinding.setTask(new Task());
+        builder.setView(dialogBinding.getRoot())
                 .setTitle("Add Task")
                 .setPositiveButton(R.string.action_add, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        mPresenter.addTask(mTaskList, editTitle.getText().toString(),
-                                editMessage.getText().toString());
+                        mPresenter.addTask(mTaskList, dialogBinding.getTask().getName(),
+                                dialogBinding.getTask().getMessage());
                     }
                 }).setNegativeButton(R.string.action_cancel, null);
         builder.create().show();

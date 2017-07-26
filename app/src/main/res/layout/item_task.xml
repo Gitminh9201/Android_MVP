@@ -21,7 +21,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_5"
         android:orientation="horizontal"
-        android:onClick="@{(the_view)->adapter.onClickView(the_view)}"
+        android:onClick="@{()->adapter.onClickView(task)}"
         >
 
         <CheckBox
