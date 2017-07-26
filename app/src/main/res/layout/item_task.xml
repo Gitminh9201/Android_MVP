@@ -1,27 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/dp_10"
-    android:layout_marginTop="@dimen/dp_5"
-    android:orientation="horizontal"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBox
-        android:id="@+id/check_finish"
-        android:layout_width="@dimen/dp_40"
-        android:layout_height="@dimen/dp_40"/>
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_marginLeft="@dimen/dp_5"
-        android:gravity="center_vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"/>
-    <Button
-        android:id="@+id/button_delete"
-        android:text="Delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <data>
 
-</LinearLayout>
+        <variable
+            name="task"
+            type="com.example.duclh.mvp.data.model.Task" />
+        <variable
+            name="holder"
+            type="com.example.duclh.mvp.TaskAdapter.ViewHolder"/>
+        <variable
+            name="adapter"
+            type="com.example.duclh.mvp.TaskAdapter"/>
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:orientation="horizontal"
+        android:onClick="@{(the_view)->adapter.onClickView(the_view)}"
+        >
+
+        <CheckBox
+            android:id="@+id/check_finish"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:checked="@{task.finish}"
+            android:onClick="@{()->holder.clickCheck()}"
+            />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@{task.message}"
+            />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:onClick="@{()->holder.clickDelete()}"
+            />
+
+    </LinearLayout>
+</layout>
