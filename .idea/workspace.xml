@@ -17,7 +17,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/duclh/mvp/TaskAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/duclh/mvp/TaskAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_task.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_task.xml" />
     </list>
     <ignored path="MVP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,12 +74,12 @@
       <file leaf-file-name="TaskAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/duclh/mvp/TaskAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-810">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
               <folding>
-                <element signature="e#2084#2537#0" expanded="true" />
-                <element signature="e#2536#2537#0" expanded="true" />
-                <element signature="e#2557#2579#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2581#2582#0" expanded="true" />
+                <element signature="e#2602#2624#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2628,7 +2627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501062495250</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix task id">
+      <created>1501063612423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1501063612423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2683,7 +2689,8 @@
     <MESSAGE value="init project from MVP - first commit" />
     <MESSAGE value="data binding" />
     <MESSAGE value="fix data binding  final" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix data binding  final" />
+    <MESSAGE value="fix task id" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix task id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2722,9 +2729,9 @@
         <state relative-caret-position="990">
           <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
           <folding>
-            <element signature="e#2084#2537#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#2557#2579#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+            <element signature="e#2602#2624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2778,9 +2785,9 @@
         <state relative-caret-position="1638">
           <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
           <folding>
-            <element signature="e#2084#2537#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#2557#2579#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+            <element signature="e#2602#2624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3042,12 +3049,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/duclh/mvp/TaskAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
           <folding>
-            <element signature="e#2084#2537#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#2557#2579#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+            <element signature="e#2602#2624#0" expanded="true" />
           </folding>
         </state>
       </provider>

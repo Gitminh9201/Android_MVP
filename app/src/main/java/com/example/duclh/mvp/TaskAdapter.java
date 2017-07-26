@@ -1,6 +1,7 @@
 package com.example.duclh.mvp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +21,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     private List<Task> mTaskList;
     private MainContract.Presenter mPresenter;
     private RecyclerView mRecyclerView;
-    ItemTaskBinding binding;
+    private Context mConText;
 
     public TaskAdapter(List<Task> taskList, MainContract.Presenter presenter,
                        RecyclerView recyclerView) {
@@ -42,16 +43,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_task, parent, false);
+        ItemTaskBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_task, parent, false);
         binding.setAdapter(this);
+        mConText = parent.getContext();
         return new ViewHolder(binding);
 
 
     }
 
     public void onClickView(Task task) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(binding.getRoot().getContext());
-        LayoutInflater inflater = LayoutInflater.from(binding.getRoot().getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(mConText);
+        LayoutInflater inflater = LayoutInflater.from(mConText);
         final ItemDialogBinding dialogBinding = DataBindingUtil.inflate(inflater, R.layout.item_dialog, null, false);
         dialogBinding.setTask(task);
         final int position = mTaskList.indexOf(task);
